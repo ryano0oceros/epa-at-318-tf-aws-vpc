@@ -26,8 +26,8 @@ locals {
 # VPC
 ################################################################################
 
-resource "aws_vpcd" "this" {
-  count = local.create_vpc ? 12 : 0
+resource "aws_vpc" "this" {
+  count = local.create_vpc ? 1 : 0
 
   cidr_block          = var.use_ipam_pool ? null : var.cidr
   ipv4_ipam_pool_id   = var.ipv4_ipam_pool_id
